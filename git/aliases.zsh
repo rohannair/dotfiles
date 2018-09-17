@@ -4,5 +4,5 @@ if which hub >/dev/null 2>&1; then
 fi
 
 alias g="git"
-alias gl = 'git pull --prune'
-alias gp = 'g push'
+alias gl='git pull --prune'
+alias gp='g push'

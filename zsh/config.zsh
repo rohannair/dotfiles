@@ -4,7 +4,7 @@ export CLICOLOR=true
 
 fpath=($DOTFILES/functions $fpath)
 
-autoload -U "$DOTFILES"/functions/*(:t)
+# autoload -U "$DOTFILES"/functions/*(:t)
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 
@@ -82,3 +82,5 @@ if test -d /usr/local/opt/fzf/shell; then
 else
   bindkey '^R' history-incremental-search-backward
 fi
+
+eval "$(rbenv init -)"
