@@ -20,7 +20,7 @@
   l = log --pretty=format:"%C(green)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
   s = status -sb
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-  go = checkout -B
+  go = checkout -b
   tags = tag -l
   branches = branch -a
   remotes = remote -v
@@ -98,3 +98,8 @@
 	lastupdate = 201809111116
 [credential]
 	helper = osxkeychain
+
+[url "git@github.com:HighlineBETA/"]
+  insteadOf = hlb:
+[url "git@github.com:rohannair/"]
+  insteadOf = rn:

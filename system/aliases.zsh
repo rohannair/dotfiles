@@ -37,7 +37,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias mkdir="mkdir -p"
 
-alias webserver="python -m SimpleHTTPServer 9111"
+alias webserver="python -m SimpleHTTPServer 9999"
 
 # quick hack to make watch work with aliases
 alias watch='watch '
