@@ -9,6 +9,7 @@
   whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
   trustctime = false
   editor = /usr/local/bin/vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [alias]
   ca = !git add -A && git commit -av
