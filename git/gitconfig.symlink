@@ -15,7 +15,7 @@
   ca = !git add -A && git commit -av
   cam = commit -am
   co = checkout
-  pullr = pull --rebase --autostash
+  pull = pull --rebase --autostash
   st = status
   rh = reset --hard
   l = log --pretty=format:"%C(green)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
@@ -29,6 +29,8 @@
   git = !exec git
   g = !exec git
   ap = add --patch
+  hide = update-index --assume-unchanged
+  unhide = update-index --no-assume-unchanged
 
 [apply]
   # Detect whitespace errors when applying a patch
