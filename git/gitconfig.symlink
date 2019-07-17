@@ -25,12 +25,14 @@
   tags = tag -l
   branches = branch -a
   remotes = remote -v
+  oops = commit -a --amend --no-edit
   please = push --force-with-lease
   git = !exec git
   g = !exec git
   ap = add --patch
   hide = update-index --assume-unchanged
   unhide = update-index --no-assume-unchanged
+  fp = fetch --all --prune
 
 [apply]
   # Detect whitespace errors when applying a patch
@@ -98,7 +100,7 @@
 [help]
   autocorrect = 1
 [dotfiles]
-	lastupdate = 201903211442
+	lastupdate = 201903281404
 [credential]
 	helper = osxkeychain
 
