@@ -47,3 +47,5 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
 
 export PATH="/usr/local/sbin:$PATH"
+
+eval "$(starship init zsh)"
