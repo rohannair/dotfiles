@@ -1,5 +1,4 @@
 caarlos0/ports kind:path
-caarlos0/ports kind:path
 caarlos0/zsh-git-fetch-merge kind:path
 caarlos0/zsh-git-sync kind:path
 caarlos0/zsh-mkc

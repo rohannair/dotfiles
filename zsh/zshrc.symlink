@@ -4,7 +4,7 @@ export DOTFILES="$HOME/.dotfiles"
 
 # your default editor
 export EDITOR='vim'
-export VEDITOR='subl'
+export VEDITOR='code'
 
 # all of our zsh files
 typeset -U config_files
@@ -46,6 +46,7 @@ unset config_files updated_at
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
 
+export ASDF_DIR=$(brew --prefix asdf)
 export PATH="/usr/local/sbin:$PATH"
 
-eval "$(starship init zsh)"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
