@@ -7,7 +7,6 @@ mafredri/zsh-async
 
 haegin/zsh-magic-history
 haegin/zsh-magic-completion
-haegin/zsh-fzf
 haegin/zsh-rationalise-dot
 
 rupa/z

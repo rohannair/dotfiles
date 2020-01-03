@@ -4,3 +4,15 @@ Host *
   UseKeychain yes
 
 Include ~/.ssh/config.local
+
+# Personal config
+Host github.com
+  HostName github.com
+  User github
+  IdentityFile ~/.ssh/id_rsa
+
+# Work config
+Host github.com
+  HostName github.com
+  User github
+  IdentityFile ~/.ssh/id_rsa_fin
