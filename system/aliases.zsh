@@ -1,4 +1,8 @@
 #!/bin/sh
+alias mv="mv -i"
+alias cp="cp -i"
+
+
 # modern make
 if which mmake >/dev/null 2>&2; then
   alias make='mmake'

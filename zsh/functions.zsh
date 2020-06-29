@@ -159,3 +159,22 @@ function o() {
 function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function whichssh() {
+  echo $(ssh-add -l);
+}
+
+function setpersonal() {
+  ssh-add -D;
+  ssh-add ~/.ssh/id_rsa_rn;
+}
+
+function setwork() {
+  ssh-add -D;
+  ssh-add ~/.ssh/id_rsa;
+}
+
+function fuck() {
+  git oops;
+  git please;
+}

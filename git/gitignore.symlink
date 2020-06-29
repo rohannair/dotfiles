@@ -14,3 +14,5 @@
 .vscode/
 dump.rdb
 .envrc
+.tool-versions
+core-dev.pem

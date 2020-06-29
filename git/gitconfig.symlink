@@ -1,6 +1,6 @@
 [user]
   name = Rohan Nair
-  email = r@rohannair.ca
+  email = rn@rohan.ai
   username = rohannair
 
 [core]
@@ -8,8 +8,11 @@
   attributesfile = ~/.gitattributes
   whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
   trustctime = false
-  editor = /usr/local/bin/vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  editor = /usr/bin/vim
+	pager = delta --plus-color="#012800" --minus-color="#340001"
+
+[interactive]
+  diffFilter = delta --color-only
 
 [alias]
   ca = !git add -A && git commit -av
@@ -33,6 +36,7 @@
   hide = update-index --assume-unchanged
   unhide = update-index --no-assume-unchanged
   fp = fetch --all --prune
+  cob = !"git branch -l --format '%(refname:short)' --sort=-committerdate | fzf --preview 'git log --oneline --decorate --color {}' | xargs -n1 git checkout"
 
 [apply]
   # Detect whitespace errors when applying a patch
@@ -104,7 +108,10 @@
 [credential]
 	helper = osxkeychain
 
-[url "git@github.com:HighlineBETA/"]
-  insteadOf = hlb:
-[url "git@github.com:rohannair/"]
+[url "git@github.com:finaeoinc/"]
+  insteadOf = fn:
+[url "git@rn.github.com:rohannair/"]
   insteadOf = rn:
+
+[includeIf "gitdir:~/Workspace/finaeoinc"]
+    path = ~/Workspace/finaeoinc/.gitconfig

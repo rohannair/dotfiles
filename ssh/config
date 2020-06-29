@@ -2,17 +2,17 @@ Host *
   ServerAliveInterval 60
   StrictHostKeyChecking no
   UseKeychain yes
+  AddKeysToAgent yes
+  ForwardAgent yes
 
 Include ~/.ssh/config.local
 
-# Personal config
 Host github.com
   HostName github.com
-  User github
+  User git
   IdentityFile ~/.ssh/id_rsa
 
-# Work config
-Host github.com
+Host rn.github.com
   HostName github.com
-  User github
-  IdentityFile ~/.ssh/id_rsa_fin
+  User git
+  IdentityFile ~/.ssh/id_rsa_rn
