@@ -104,7 +104,7 @@
 [help]
   autocorrect = 1
 [dotfiles]
-	lastupdate = 202001021642
+	lastupdate = 202007171359
 [credential]
 	helper = osxkeychain
 

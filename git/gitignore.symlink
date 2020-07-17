@@ -16,3 +16,4 @@ dump.rdb
 .envrc
 .tool-versions
 core-dev.pem
+node_modules

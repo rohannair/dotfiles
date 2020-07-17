@@ -4,6 +4,6 @@ if which brew >/dev/null 2>&1; then
 else
   curl -sL https://git.io/antibody | sh -s
 fi
-export DOTFILES="/Users/rohannair/.dotfiles"
+export DOTFILES="/Users/rohan/.dotfiles"
 antibody bundle <"$DOTFILES/antibody/bundles.txt" >~/.zsh_plugins.sh
 antibody update
