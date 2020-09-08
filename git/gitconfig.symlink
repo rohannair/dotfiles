@@ -78,6 +78,8 @@
   pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
+[url "git.github.com:rohannair/"]
+  insteadOf = rn:
 
 [push]
   default = current
@@ -89,7 +91,7 @@
   smudge = git-media-smudge %f
 
 [url "https://"]
-  insteadOf = git://
+	insteadOf = git://
 [gh]
   autoUpdate = always
 [rerere]
@@ -108,10 +110,8 @@
 [credential]
 	helper = osxkeychain
 
-[url "git@github.com:finaeoinc/"]
-  insteadOf = fn:
-[url "git@rn.github.com:rohannair/"]
-  insteadOf = rn:
+[merge]
+tool = smerge
 
-[includeIf "gitdir:~/Workspace/finaeoinc"]
-    path = ~/Workspace/finaeoinc/.gitconfig
+[diff]
+tool = smerge
