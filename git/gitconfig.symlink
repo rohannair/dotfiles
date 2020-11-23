@@ -2,6 +2,7 @@
   name = Rohan Nair
   email = rn@rohan.ai
   username = rohannair
+	signing = key
 
 [core]
   excludesfile = ~/.gitignore
@@ -15,8 +16,9 @@
   diffFilter = delta --color-only
 
 [alias]
-  ca = !git add -A && git commit -av
-  cam = commit -am
+  commit = commit -S
+  ca = !git add -A && git commit -avS
+  cam = commit -amS
   co = checkout
   pull = pull --rebase --autostash
   st = status
@@ -106,7 +108,7 @@
 [help]
   autocorrect = 1
 [dotfiles]
-	lastupdate = 202007171359
+	lastupdate = 202011061503
 [credential]
 	helper = osxkeychain
 
@@ -115,3 +117,7 @@ tool = smerge
 
 [diff]
 tool = smerge
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true
