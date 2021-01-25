@@ -178,3 +178,7 @@ function fuck() {
   git oops;
   git please;
 }
+
+function reload() {
+  exec "$SHELL" -l
+}

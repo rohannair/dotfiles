@@ -29,6 +29,7 @@
   go = checkout -b
   tags = tag -l
   branches = branch -a
+  br = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
   remotes = remote -v
   oops = commit -a --amend --no-edit
   please = push --force-with-lease
@@ -38,7 +39,12 @@
   hide = update-index --assume-unchanged
   unhide = update-index --no-assume-unchanged
   fp = fetch --all --prune
+  code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"
+  cc = "!git code-changes"
   cob = !"git branch -l --format '%(refname:short)' --sort=-committerdate | fzf --preview 'git log --oneline --decorate --color {}' | xargs -n1 git checkout"
+  wdiff = diff -w --word-diff=color
+  root = rev-parse --show-toplevel
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 
 [apply]
   # Detect whitespace errors when applying a patch
@@ -103,7 +109,7 @@
   autoStash = true
 
 [branch "master"]
-  mergeoptons = --no-ff
+  mergeoptions = --no-ff
 
 [help]
   autocorrect = 1
@@ -121,3 +127,5 @@ tool = smerge
 	program = /usr/local/bin/gpg
 [commit]
 	gpgsign = true
+[hub]
+	protocol = https
