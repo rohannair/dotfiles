@@ -1,0 +1,11 @@
+rupa/z
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+
+# Pure prompt
+mafredri/zsh-async
+sindresorhus/pure branch:main
+zdharma-continuum/fast-syntax-highlighting
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search

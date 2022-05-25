@@ -5,7 +5,7 @@
 	signing = key
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
   whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
   trustctime = false
@@ -114,7 +114,7 @@
 [help]
   autocorrect = 1
 [dotfiles]
-	lastupdate = 202011061503
+	lastupdate = 202205251319
 [credential]
 	helper = osxkeychain
 
@@ -129,3 +129,5 @@ tool = smerge
 	gpgsign = true
 [hub]
 	protocol = https
+[credential]
+	helper = osxkeychain
