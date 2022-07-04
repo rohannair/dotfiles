@@ -12,8 +12,6 @@ alias less="less -r"
 alias find="fd"
 alias c="bat"
 alias cat="bat"
-alias r="redis-cli"
-alias redis="redis-cli"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -22,7 +20,7 @@ alias mkdir="mkdir -p"
 
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app"
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="more ~/.ssh/id_ed25519.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias mv="mv -i"
 alias cp="cp -i"
