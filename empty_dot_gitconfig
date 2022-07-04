@@ -16,9 +16,9 @@
   diffFilter = delta --color-only
 
 [alias]
-  commit = commit
-  ca = !git add -A && git commit -av
-  cam = commit -am
+  commit = commit -S
+  ca = !git add -A && git commit -avS
+  cam = commit -amS
   co = checkout
   pull = pull --rebase --autostash
   st = status
@@ -118,14 +118,9 @@
 [credential]
 	helper = osxkeychain
 
-[merge]
-tool = smerge
-
-[diff]
-tool = smerge
-  # [gpg]
-  #   program = /usr/local/bin/gpg
-# [commit]
-# 	gpgsign = true
+[gpg]
+    program = /Users/rohan/.nix-profile/bin/gpg2
+[commit]
+	gpgsign = true
 [hub]
 	protocol = https

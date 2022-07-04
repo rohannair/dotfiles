@@ -1,3 +1,6 @@
+set -o vi
+set -o emacs
+
 export EDITOR='vim'
 export VEDITOR='code'
 
