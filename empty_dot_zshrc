@@ -1,0 +1,28 @@
+export EDITOR='vim'
+export VEDITOR='code'
+
+autoload -Uz compinit
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
+
+export PATH="$PATH:/usr/local/sbin:$HOME/bin:$PATH"
+export GPG_TTY=`tty`
+
+source ~/.zsh_aliases
+
+# clone antidote if necessary and generate a static plugin file
+[[ -e ~/.antidote ]] || git clone https://github.com/mattmc3/antidote.git ~/.antidote
+
+# source antidote
+chmod +x ~/.antidote/antidote.zsh
+. ~/.antidote/antidote.zsh
+
+# uncomment if you want your session to have commands like `antidote update`
+autoload -Uz $HOME/.antidote/functions/antidote
+
+antidote bundle <$HOME/.zsh_plugins.txt >$HOME/.zsh_plugins.zsh
+antidote load

@@ -1,0 +1,131 @@
+[user]
+  name = Rohan Nair
+  email = rn@rohan.ai
+  username = rohannair
+	signing = key
+
+[core]
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
+  whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
+  trustctime = false
+  editor = /usr/bin/vim
+	pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[alias]
+  commit = commit
+  ca = !git add -A && git commit -av
+  cam = commit -am
+  co = checkout
+  pull = pull --rebase --autostash
+  st = status
+  rh = reset --hard
+  l = log --pretty=format:"%C(green)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
+  s = status -sb
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  go = checkout -b
+  tags = tag -l
+  branches = branch -a
+  br = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+  remotes = remote -v
+  oops = commit -a --amend --no-edit
+  please = push --force-with-lease
+  git = !exec git
+  g = !exec git
+  ap = add --patch
+  hide = update-index --assume-unchanged
+  unhide = update-index --no-assume-unchanged
+  fp = fetch --all --prune
+  code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"
+  cc = "!git code-changes"
+  cob = !"git branch -l --format '%(refname:short)' --sort=-committerdate | fzf --preview 'git log --oneline --decorate --color {}' | xargs -n1 git checkout"
+  wdiff = diff -w --word-diff=color
+  root = rev-parse --show-toplevel
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+
+[apply]
+  # Detect whitespace errors when applying a patch
+  whitespace = fix
+[help]
+  autocorrect = 1
+[color]
+  # Use colors in Git commands that are capable of colored output when
+  # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+  ui = always
+[color "branch"]
+  current = yellow bold
+  local = green bold
+  remote = cyan bold
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = red bold
+[merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+
+# URL shorthands
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+[url "git.github.com:rohannair/"]
+  insteadOf = rn:
+
+[push]
+  default = current
+[pull]
+  default = current
+  rebase = true
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+
+[url "https://"]
+	insteadOf = git://
+[gh]
+  autoUpdate = always
+[rerere]
+  enabled = true
+[rebase]
+  autosquash = true
+  autoStash = true
+
+[branch "master"]
+  mergeoptions = --no-ff
+
+[help]
+  autocorrect = 1
+[dotfiles]
+	lastupdate = 202011061503
+[credential]
+	helper = osxkeychain
+
+[merge]
+tool = smerge
+
+[diff]
+tool = smerge
+  # [gpg]
+  #   program = /usr/local/bin/gpg
+# [commit]
+# 	gpgsign = true
+[hub]
+	protocol = https
