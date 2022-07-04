@@ -4,6 +4,8 @@ if which hub >/dev/null 2>&1; then
 fi
 
 alias cm="chezmoi"
+alias hm="home-manager"
+alias nd="nix-darwin"
 alias g="git"
 alias grep="rg"
 alias crontab='echo fuck off'

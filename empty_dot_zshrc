@@ -112,3 +112,9 @@ if test -d /usr/local/opt/fzf/shell; then
 else
   bindkey '^R' history-incremental-search-backward
 fi
+
+# Nix
+export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
+
+# Starship prompt
+eval "$(starship init zsh)"
