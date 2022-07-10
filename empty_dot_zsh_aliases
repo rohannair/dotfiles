@@ -28,10 +28,10 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 if which exa >/dev/null 2>&1; then
-  alias ls='exa'
-  alias l='exa -la --git'
-  alias la='exa -laa --git'
-  alias ll='exa -l --git'
+  alias ls='exa --icons'
+  alias l='exa -la --git --icons'
+  alias la='exa -laa --git --icons'
+  alias ll='exa -l --git --icons'
 else
   if [ "$(uname -s)" = "Darwin" ]; then
     alias ls="ls -FG"
