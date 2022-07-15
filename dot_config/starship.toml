@@ -1,0 +1,112 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$jobs\
+$time\
+$directory\
+$cmd_duration\
+$line_break\
+$status\
+$shell\
+$character"""
+
+right_format = """
+$username\
+$hostname\
+$git_branch\
+$git_state\
+$git_status
+"""
+
+add_newline = true
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+disabled = false
+
+[cmd_duration]
+min_time = 50
+format = "[$duration]($style) "
+style = "yellow dimmed"
+
+[hostname]
+style = "blue dimmed"
+
+[directory]
+truncation_length = 1
+fish_style_pwd_dir_length = 1
+disabled = false
+
+[username]
+style_user = "blue dimmed"
+style_root = "blue dimmed"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[localip]
+ssh_only = false
+format = "@[$localipv4](bold red) "
+disabled = false
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = " "
+format = "$symbol [${ram}(${swap})]($style) "
+style = "#cccccc dimmed"
+
+[time]
+format = "[$time]($style) "
+disabled = false
+style = "white"
+time_format = "%H:%M:%S"
+
+# makes prompt a single line
+[line_break]
+disabled = true
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# These symbols will only show when battery levels are 20% or less
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "green"
+
+# Clear visibility for exit codes
+[status]
+style = "red bold"
+symbol = "✖ "
+format = '[\[$symbol$status\]]($style) '
+disabled = false
+
+[jobs]
+number_threshold = 0
+symbol = "+"
+style = "cyan"
+disabled = false
+
+[git_branch]
+always_show_remote = true
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"

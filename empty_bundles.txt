@@ -1,6 +1,7 @@
 rupa/z
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
+zsh-fzf-history-search
 
 sindresorhus/pure
 zsh-users/zsh-syntax-highlighting
